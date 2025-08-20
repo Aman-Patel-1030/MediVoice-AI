@@ -1,4 +1,4 @@
-# 🩺 AI Medical Voice Agent  
+# 🩺 MEDIVOICE - AI
 
 AI-powered doctors in your browser – real-time health assistance with voice.  
 
