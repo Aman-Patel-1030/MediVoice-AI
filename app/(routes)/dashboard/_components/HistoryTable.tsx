@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   Table,
   TableBody,
@@ -8,9 +9,9 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { SessionDetail } from "../medical-agent/[sessionId]/page";
+import { SessionDetail } from "./HistoryList";
 import { Button } from "@/components/ui/button";
-import moment from "moment";
+import moment from 'moment';
 import ViewReportDialog from "./ViewReportDialog";
 
 type Props = {
@@ -19,34 +20,36 @@ type Props = {
 
 function HistoryTable({ historyList }: Props) {
   return (
-    <Table>
-      <TableCaption>Previous Consultation Reports</TableCaption>
-      <TableHeader>
-        <TableRow>
-          <TableHead>AI Medical Specialist</TableHead>
-          <TableHead>Description</TableHead>
-          <TableHead>Date</TableHead>
-          <TableHead className="text-right">Action</TableHead>
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {historyList.map((record: SessionDetail, index: number) => (
-          <TableRow key={record?.sessionId}>
-            <TableCell className="font-medium">
-              {record?.selectedDoctor?.specialist}
-            </TableCell>
-            <TableCell>{record?.notes}</TableCell>
-            <TableCell>
-              {moment(new Date(record?.createdOn)).fromNow()}
-            </TableCell>
-            <TableCell className="text-right">
-              <ViewReportDialog record={record} />
-            </TableCell>
+    <div>
+      <Table>
+        <TableCaption>Previous Consultation reports</TableCaption>
+        <TableHeader>
+          <TableRow>
+            <TableHead>AI Medical Specialist</TableHead>
+            <TableHead>Description</TableHead>
+            <TableHead>Date</TableHead>
+            <TableHead className="text-right">Action</TableHead>
           </TableRow>
-        ))}
-      </TableBody>
-    </Table>
+        </TableHeader>
+        <TableBody>
+          {historyList.map((record: SessionDetail, index: number) => (
+            <TableRow key={index}>
+              <TableCell className="font-medium">{record.selectedDoctor.specialist}</TableCell>
+              <TableCell>{record.notes}</TableCell>
+              <TableCell>{moment(new Date(record.createdOn)).fromNow() }</TableCell>
+              <TableCell className="text-right">
+                <Button variant={'link'} size={'sm'}  > 
+                  <ViewReportDialog record={record} />
+
+                </Button>
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </div>
   );
 }
 
 export default HistoryTable;
+

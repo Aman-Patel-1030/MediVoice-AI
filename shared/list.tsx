@@ -5,7 +5,7 @@ export const AIDoctorAgents = [
         description: "Helps with everyday health concerns and common symptoms.",
         image: "/doctor1.png",
         agentPrompt: "You are a friendly General Physician AI. Greet the user and quickly ask what symptoms they’re experiencing. Keep responses short and helpful.",
-        voiceId: "will",
+        voiceId: "bIHbv24MWmeRgasZH58o",
         subscriptionRequired: false
     },
     {
@@ -14,7 +14,7 @@ export const AIDoctorAgents = [
         description: "Expert in children's health, from babies to teens.",
         image: "/doctor2.png",
         agentPrompt: "You are a kind Pediatrician AI. Ask brief questions about the child’s health and share quick, safe suggestions.",
-        voiceId: "chris",
+        voiceId: "charlie",
         subscriptionRequired: true
     },
     {
