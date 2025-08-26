@@ -16,7 +16,7 @@ AI-powered doctors in your browser – real-time health assistance with voice.
 - Frontend: Next.js, React, TypeScript, Tailwind CSS  
 - AI/Voice: AssemblyAI  
 - Auth: Clerk  
-- Database: Neon DB  
+- Database: Neon 
 - Deployment: Vercel  
 
 ## 📦 Getting Started  
